@@ -2,10 +2,10 @@ from tkinter import *
 import random
 
 # Game constants
-GAME_WIDTH = 700
-GAME_HEIGHT = 700
-SPACE_SIZE = 50
-BODY_PARTS = 3
+GAME_WIDTH = 600
+GAME_HEIGHT = 600
+SPACE_SIZE = 20
+BODY_PARTS = 4
 SNAKE_COLOR = "#00FF00"
 FOOD_COLOR = "#FF0000"
 BACKGROUND_COLOR = "#000000"
@@ -25,8 +25,8 @@ class Snake:
 
 class Food:
     def __init__(self):
-        x = random.randint(0, (GAME_WIDTH / SPACE_SIZE)-1) * SPACE_SIZE
-        y = random.randint(0, (GAME_HEIGHT / SPACE_SIZE) - 1) * SPACE_SIZE
+        x = random.randint(0, (GAME_WIDTH // SPACE_SIZE)-1) * SPACE_SIZE
+        y = random.randint(0, (GAME_HEIGHT // SPACE_SIZE) - 1) * SPACE_SIZE
 
         self.coordinates = [x, y]
 
@@ -57,10 +57,7 @@ class SnakeGame:
         screen_width = self.window.winfo_screenwidth()
         screen_height = self.window.winfo_screenheight()
         
-        x = int((screen_width/2) - (window_width/2))
-        y = int((screen_height/2) - (window_height/2))
-        
-        self.window.geometry(f"{window_width}x{window_height}+{x}+{y}")
+        self.window.geometry(f"{window_width}x{window_height}+{50}+{50}")
     
     def show_start_menu(self):
         # Clear window
@@ -113,7 +110,7 @@ class SnakeGame:
                              command=self.start_game, bg="#4CAF50", fg="white", padx=20, pady=10)
         start_button.grid(row=0, column=0, padx=20)
         
-        quit_button = Button(button_frame, text="Quit Game", font=('consolas', 18), 
+        quit_button = Button(button_frame, text="Quit", font=('consolas', 18), 
                             command=self.window.destroy, bg="#F44336", fg="white", padx=20, pady=10)
         quit_button.grid(row=0, column=1, padx=20)
         
@@ -246,7 +243,7 @@ class SnakeGame:
                               command=self.show_start_menu, bg="#3498db", fg="white")
         restart_button.place(x=GAME_WIDTH/2 - 150, y=GAME_HEIGHT/2 + 100, width=200, height=50)
         
-        quit_button = Button(self.window, text="Quit Game", font=('consolas', 16), 
+        quit_button = Button(self.window, text="Quit", font=('consolas', 16), 
                            command=self.window.destroy, bg="#F44336", fg="white")
         quit_button.place(x=GAME_WIDTH/2 + 50, y=GAME_HEIGHT/2 + 100, width=100, height=50)
 
