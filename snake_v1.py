@@ -1,11 +1,11 @@
 from tkinter import *
 import random
 
-GAME_WIDTH = 700
-GAME_HEIGHT = 700
-SPEED = 80
-SPACE_SIZE = 50
-BODY_PARTS = 3
+GAME_WIDTH = 500
+GAME_HEIGHT = 500
+SPEED = 200 # Lower value means faster game
+SPACE_SIZE = 20
+BODY_PARTS = 4
 SNAKE_COLOR = "#00FF00"
 FOOD_COLOR = "#FF0000"
 BACKGROUND_COLOR = "#000000"
@@ -29,8 +29,9 @@ class Food:
 
     def __init__(self):
 
-        x = random.randint(0, (GAME_WIDTH / SPACE_SIZE)-1) * SPACE_SIZE
-        y = random.randint(0, (GAME_HEIGHT / SPACE_SIZE) - 1) * SPACE_SIZE
+        x = random.randint(0, (GAME_WIDTH // SPACE_SIZE) - 1) * SPACE_SIZE
+        y = random.randint(0, (GAME_HEIGHT // SPACE_SIZE) - 1) * SPACE_SIZE
+        # -------------------------------------------------------------------------
 
         self.coordinates = [x, y]
 
@@ -66,7 +67,8 @@ def next_turn(snake, food):
 
         canvas.delete("food")
 
-        food = Food()
+        # Re-initialize food with the current food object's reference
+        food.__init__() 
 
     else:
 
@@ -144,10 +146,7 @@ window_height = window.winfo_height()
 screen_width = window.winfo_screenwidth()
 screen_height = window.winfo_screenheight()
 
-x = int((screen_width/2) - (window_width/2))
-y = int((screen_height/2) - (window_height/2))
-
-window.geometry(f"{window_width}x{window_height}+{x}+{y}")
+window.geometry(f"{window_width}x{window_height}+{50}+{50}")
 
 window.bind('<Left>', lambda event: change_direction('left'))
 window.bind('<Right>', lambda event: change_direction('right'))
