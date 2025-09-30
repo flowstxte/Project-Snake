@@ -1,53 +1,78 @@
 # Snake Game
 
 ## Overview
+A classic Snake game built with Python and Tkinter.  
+Control the snake, eat food to grow, and avoid collisions.  
+Includes adjustable speed, pause functionality, and a clean interface.
 
-A classic Snake game built with Python and Tkinter. Control a snake as it moves around the screen, eating food and growing longer. The game features a customizable speed setting, pause functionality, and an intuitive user interface.
+---
+
+## Screenshots
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/flowstxte/Project-Snake/refs/heads/main/ss1.png" width="45%" />
+  <img src="https://raw.githubusercontent.com/flowstxte/Project-Snake/refs/heads/main/ss2.png" width="45%" />
+</p>
+
+---
 
 ## Features
+- Adjustable game speed with slider  
+- Pause/resume with 'P' key  
+- Score tracking  
+- Game over screen with restart options  
+- Modern, intuitive UI  
 
-- Adjustable game speed via slider control
-- Pause/resume gameplay with 'P' key
-- Score tracking
-- Game over screen with restart options
-- Clean, modern user interface
+---
 
 ## Requirements
+<p>
+  <img src="https://skillicons.dev/icons?i=python,tkinter" />
+</p>
 
-- Python 3.x
-- Tkinter (included with standard Python installation)
+- Python 3.x  
+- Tkinter (included with Python)  
+
+---
 
 ## How to Play
-
 1. Run the game:
-   ```sh
-   python snake_v2.py
-   ```
-2. Use the slider to set your preferred game speed.
+```bash
+python snake_v2.py
+````
+
+2. Use the slider to set game speed.
 3. Click "Start Game" to begin.
-4. Control the snake using arrow keys:
-   - **↑ (Up Arrow)**: Move up
-   - **↓ (Down Arrow)**: Move down
-   - **← (Left Arrow)**: Move left
-   - **→ (Right Arrow)**: Move right
-5. Press 'P' to pause/resume the game.
-6. Eat food (red squares) to grow and increase your score.
-7. Avoid hitting the walls or the snake's own body.
+4. Use arrow keys to control the snake:
+
+   * ↑ Up
+   * ↓ Down
+   * ← Left
+   * → Right
+5. Press 'P' to pause/resume.
+6. Eat food (red squares) to grow and score points.
+7. Avoid hitting walls or your own body.
+
+---
 
 ## Game Rules
 
-- The snake moves continuously in the direction of the last arrow key pressed.
-- Each piece of food eaten increases your score by 1 point.
-- The snake grows longer each time it eats food.
-- The game ends if the snake hits a wall or itself.
-- You cannot reverse direction (e.g., if moving right, you cannot immediately move left).
+* Snake moves continuously in the last pressed direction.
+* Eating food increases score by 1 and length.
+* Game ends on collision with wall or self.
+* Cannot reverse direction immediately.
+
+---
 
 ## Tips
 
-- Start with a slower speed until you get comfortable with the controls.
-- Plan your moves in advance, especially as the snake grows longer.
-- Create a strategy to maximize the available space.
+* Start slower to master controls.
+* Plan moves to avoid trapping yourself.
+* Use available space strategically.
+
+---
 
 ## Credits
 
-Created by **@flowstxte**
+Created by **flowstxte**
+ [GitHub](https://github.com/flowstxte)
